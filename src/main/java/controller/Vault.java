@@ -32,12 +32,16 @@ public class Vault implements Xeon {
             t.setSuccess(false);
             t.setReason("Amount is too large for the vault");
             t.setAmount(amount);
+            t.setFromWho(userFrom);
+            t.setToWhom(userTo);
             transactionList.add(t);
 
         } else if (userFrom.getUserAccount().getTotalSum() < amount) {
             //total sum is less than transaction sum
             t.setSuccess(false);
             t.setReason("This amount is inaccessible for the user");
+            t.setFromWho(userFrom);
+            t.setToWhom(userTo);
             t.setAmount(amount);
             transactionList.add(t);
         } else {
@@ -47,6 +51,8 @@ public class Vault implements Xeon {
             t.setSuccess(true);
             t.setReason("Transaction done");
             t.setAmount(amount);
+            t.setFromWho(userFrom);
+            t.setToWhom(userTo);
             transactionList.add(t);
         }
         System.out.println(t);

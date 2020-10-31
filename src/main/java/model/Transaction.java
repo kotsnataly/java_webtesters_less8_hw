@@ -3,11 +3,14 @@ package model;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// объект сохраняющий данные о времени , сумме и адресате транзакции.
 public class Transaction {
 
     private boolean success = false;
     private String reason;
     private float amount;
+    private User toWhom;
+    private User fromWho;
 
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss");
@@ -45,13 +48,24 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public void setToWhom(User toWhom) {
+        this.toWhom = toWhom;
+    }
+
+    public void setFromWho(User fromWho) {
+        this.fromWho = fromWho;
+    }
     @Override
     public String toString() {
         return "Transaction{" +
                 "success=" + success +
                 ", reason='" + reason + '\'' +
                 ", amount=" + amount +
+                ", toWhom=" + toWhom +
+                ", fromWho=" + fromWho +
+                ", formatter=" + formatter +
                 ", dt='" + dt + '\'' +
                 '}';
     }
-}
+
+ }
