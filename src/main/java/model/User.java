@@ -14,12 +14,17 @@ public class User {
         this.userId = userId;
     }
 
-    synchronized private boolean modifySumOfAccount(Float sum) {
-
-        return false;
-    }
 
     public PersonalUserAccount getUserAccount() {
         return userAccount;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userAccount=" + userAccount +
+                ", userName='" + userName + '\'' +
+                ", userId=" + userId +
+                '}';
     }
 }
