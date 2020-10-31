@@ -1,7 +1,5 @@
 package model;
 
-import model.Transaction;
-
 public class User {
 
     private PersonalUserAccount userAccount;

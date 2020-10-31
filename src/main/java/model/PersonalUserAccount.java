@@ -1,5 +1,6 @@
 package model;
 
+// кошелек пользователя который привязывается к сущности User.
 public class PersonalUserAccount {
 
     private float totalSum;
@@ -11,7 +12,7 @@ public class PersonalUserAccount {
         return totalSum;
     }
 
-    public void setTotalSum(float totalSum) {
-        this.totalSum = totalSum + totalSum;
+    synchronized public void setTotalSum(float totalSum) {
+        this.totalSum += totalSum;
     }
 }
