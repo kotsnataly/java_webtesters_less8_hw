@@ -50,5 +50,13 @@ class VaultTest {
         Assertions.assertTrue(3 == vault.getTransactionList().size());
     }
 
+    @Test
+    void printHistory() throws IOException {
+        vault.makeTransaction(user1, user2, 1_500_000);
+        vault.makeTransaction(user1, user2, 100_000);
+        vault.makeTransaction(user1, user2, 750_000);
+        Assertions.assertNotNull(vault.printHistory());
+    }
+
 
 }

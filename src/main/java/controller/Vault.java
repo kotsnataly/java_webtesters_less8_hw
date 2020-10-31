@@ -61,4 +61,9 @@ public class Vault implements Xeon {
     public List<Transaction> getTransactionList() {
         return transactionList;
     }
+
+    public String printHistory() {
+        System.out.println(transactionList);
+        return transactionList.toString();
+    }
 }
