@@ -22,7 +22,7 @@ public class Vault implements Xeon {
     public boolean makeTransaction(User userFrom, User userTo, float amount) throws IOException {
 
         //маппер на будущее для сериализации.
-        //Пыталась использовать System.out для вывода в json формате, но программа закрывается при первой транзакции, не могу пока исправить.
+        //Пыталась использовать System.out для вывода в json формате, но программа закрывается при первой транзакции, пытаюсь исправить.
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter objectWriter = mapper.writerFor(Transaction.class);
 
